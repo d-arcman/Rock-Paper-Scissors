@@ -31,7 +31,21 @@ function playRound(playerSelection, computerSelection) {
     } else return("No result");
 }
 
-const playerSelection = 'rock';
+function playerSelection() {
+        var playerAnswer;
+    
+      while (playerAnswer != "rock" || playerAnswer != 'scissors' || playerAnswer != 'paper') {
+        playerAnswer = prompt("Rock, Paper, or Scissors?");
+        playerAnswer = playerAnswer.toLowerCase(); 
+        if (playerAnswer === 'rock' || playerAnswer === 'scissors' || playerAnswer === 'paper') {
+            return (playerAnswer);
+        }
+    }
+}
+
+const playerPick = playerSelection();
 const computerSelection = computerPlay ();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerPick, computerSelection)); 
+
+
+
